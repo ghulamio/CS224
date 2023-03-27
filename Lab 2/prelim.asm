@@ -1,0 +1,212 @@
+.data
+    P1: .asciiz "Enter the size of the array: "
+    P2: .asciiz "Enter the elements: " 
+    P3: .asciiz "Array elements:"
+    space: .asciiz " "
+    P5: .asciiz "Hamming Distance: "
+    newline: .asciiz "\n"
+
+.text
+    main:
+        li $v0, 4
+        la $a0, P1
+        syscall
+        li $v0, 5
+        syscall
+        move $s0, $v0
+
+        move $a0, $s0
+        jal CreateArray
+        move $s1, $v0
+
+        move $a0, $s0
+        jal CreateArray
+        move $s2, $v0
+
+        move $a0, $s0
+        move $a1, $s1
+        jal PrintArray
+
+        move $a0, $s0
+        move $a1, $s2
+        jal PrintArray
+
+        move $a0, $s0
+        move $a1, $s1
+        move $a2, $s2
+        jal CalculateDistance
+        move $s3, $v0
+
+        li $v0, 4
+        la $a0, newline
+        syscall
+        li $v0, 4
+        la $a0, P5
+        syscall
+
+        move $a0, $s3
+        li $v0, 1
+        syscall
+
+        j exit
+
+    CreateArray:
+    addi $sp, $sp, -16
+    sw $s0, 0($sp)
+    sw $s1, 4($sp)
+    sw $s2, 8($sp)
+    sw $ra, 12($sp)
+
+    move $s0, $a0
+    sll $s1, $s0, 2
+    li $v0, 9
+    move $a0, $s1
+    syscall
+    move $s2, $v0
+
+    move $a0, $s0
+    move $a1, $s2
+    jal InitializeArray
+
+    move $v0, $s2
+
+    lw $s0, 0($sp)
+    lw $s1, 4($sp)
+    lw $s2, 8($sp)
+    lw $ra, 12($sp)
+    addi $sp, $sp, 16
+    jr $ra
+
+    InitializeArray:
+    addi $sp, $sp, -16
+    sw $s0, 0($sp)
+    sw $s1, 4($sp)
+    sw $s2, 8($sp)
+    sw $ra, 12($sp)
+
+    move $s0, $a0
+    move $s1, $0
+    move $s2, $a1
+
+    InitializeArrayLoop:
+        beq $s1, $s0, InitializeArrayEnd
+        li $v0, 4
+        la $a0, P2
+        syscall
+        li $v0, 5
+        syscall
+        sw $v0, 0($s2)
+        addi $s1, $s1, 1
+        addi $s2, $s2, 4
+        j InitializeArrayLoop
+
+    InitializeArrayEnd:
+        lw $s0, 0($sp)
+        lw $s1, 4($sp)
+        lw $s2, 8($sp)
+        lw $ra, 12($sp)
+        addi $sp, $sp, 16
+        jr $ra
+
+    PrintArray:
+    addi $sp, $sp, -16
+    sw $s0, 0($sp)
+    sw $s1, 4($sp)
+    sw $s2, 8($sp)
+    sw $ra, 12($sp)
+
+    move $s0, $a0 #s0 = size
+    move $s1, $a1 #s1 = array address
+    move $s2, $0
+
+    li $v0, 4
+    la $a0, P3
+    syscall
+
+    PrintArrayLoop:
+        beq $s2, $s0, PrintArrayEnd
+        lw $a0, 0($s1)
+        li $v0, 1
+        syscall
+        li $v0, 4
+        la $a0, space
+        syscall
+        addi $s1, $s1, 4
+        addi $s2, $s2, 1
+        j PrintArrayLoop
+
+    PrintArrayEnd:
+        li $v0, 4
+        la $a0, space
+
+        syscall
+        lw $s0, 0($sp)
+        lw $s1, 4($sp)
+        lw $s2, 8($sp)
+        lw $ra, 12($sp)
+        addi $sp, $sp, 16
+        jr $ra
+
+    CalculateDistance:
+    addi $sp, $sp, -20
+    sw $s0, 0($sp)
+    sw $s1, 4($sp)
+    sw $s2, 8($sp)
+    sw $s3, 12($sp)
+    sw $ra, 16($sp)
+
+    move $s0, $a0 #s0 = size
+    move $s1, $a1 #s1 = array1 address
+    move $s2, $a2 #s2 = array2 address
+    move $s3, $0 #s3 = distance
+    move $s4, $0 #s4 = counter
+
+    CalculateDistanceLoop:
+        beq $s4, $s0, CalculateDistanceEnd
+        lw $a0, 0($s1)
+        lw $a1, 0($s2)
+        jal Compare
+        beq $v0, $0, CalculateDistanceContinue
+        addi $s3, $s3, 1
+        CalculateDistanceContinue:
+        addi $s1, $s1, 4
+        addi $s2, $s2, 4
+        addi $s4, $s4, 1
+        j CalculateDistanceLoop
+
+    CalculateDistanceEnd:
+        move $v0, $s3
+        lw $s0, 0($sp)
+        lw $s1, 4($sp)
+        lw $s2, 8($sp)
+        lw $s3, 12($sp)
+        lw $ra, 16($sp)
+        addi $sp, $sp, 20
+        jr $ra
+
+    Compare:
+    addi $sp, $sp, -16
+    sw $s0, 0($sp)
+    sw $s1, 4($sp)
+    sw $s2, 8($sp)
+    sw $ra, 12($sp)
+
+    move $s0, $a0
+    move $s1, $a1
+    move $s2, $0
+
+    beq $s0, $s1, CompareEnd
+    addi $s2, $s2, 1
+
+    CompareEnd:
+        move $v0, $s2
+        lw $s0, 0($sp)
+        lw $s1, 4($sp)
+        lw $s2, 8($sp)
+        lw $ra, 12($sp)
+        addi $sp, $sp, 16
+        jr $ra
+
+    exit:
+        li $v0, 10
+        syscall

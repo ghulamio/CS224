@@ -1,0 +1,150 @@
+# CS224
+# Lab No. 1
+# Section No. 3
+# Ghulam Ahmed
+# 22101001 
+# 26/02/2023
+
+
+.data
+array: .space 80 # Allocate 80 bytes = space enough to hold 20 words
+p1: .asciiz "Enter the number of elements: "
+p2: .asciiz "Enter the elements one at a time: "
+p3: .asciiz "Enter the number N: "
+p4: .asciiz "The number of array members equal to N: "
+p5: .asciiz "\nThe number of array members less than N: "
+p6: .asciiz "\nThe number of array members greater than N: "
+p7: .asciiz "\nThe number of elements evenly divisible by N: "
+
+.text
+initialization:
+    li $t0, 0
+    la $t1, array
+    li $t2, 20
+
+get_number_of_elements:
+    li $v0, 4
+    la $a0, p1
+    syscall
+    li $v0, 5
+    syscall
+    move $t2, $v0
+
+get_elements:
+    li $v0, 4
+    la $a0, p2
+    syscall
+    li $v0, 5
+    syscall
+    sw $v0, 0($t1)
+    addi $t1, $t1, 4
+    addi $t0, $t0, 1
+    bne $t0, $t2, get_elements
+
+get_N:
+    li $v0, 4
+    la $a0, p3
+    syscall
+    li $v0, 5
+    syscall
+    move $t3, $v0
+
+count_equal:
+    li $t0, 0
+    li $t4, 0
+    la $t1, array
+    count_equal_loop:
+        lw $t5, 0($t1)
+        beq $t5, $t3, count_equal_true
+        j count_equal_false
+    count_equal_true:
+        addi $t4, $t4, 1
+    count_equal_false:
+        addi $t1, $t1, 4
+        addi $t0, $t0, 1
+        bne $t0, $t2, count_equal_loop
+    move $s1, $t4
+
+count_less:
+    li $t0, 0
+    li $t4, 0
+    la $t1, array
+    count_less_loop:
+        lw $t5, 0($t1)
+        blt $t5, $t3, count_less_true
+        j count_less_false
+    count_less_true:
+        addi $t4, $t4, 1
+    count_less_false:
+        addi $t1, $t1, 4
+        addi $t0, $t0, 1
+        bne $t0, $t2, count_less_loop
+    move $s2, $t4
+
+count_greater:
+    li $t0, 0
+    li $t4, 0
+    la $t1, array
+    count_greater_loop:
+        lw $t5, 0($t1)
+        bgt $t5, $t3, count_greater_true
+        j count_greater_false
+    count_greater_true:
+        addi $t4, $t4, 1
+    count_greater_false:
+        addi $t1, $t1, 4
+        addi $t0, $t0, 1
+        bne $t0, $t2, count_greater_loop
+    move $s3, $t4
+
+count_divisible:
+    li $t0, 0
+    li $t4, 0
+    la $t1, array
+    count_divisible_loop:
+        lw $t5, 0($t1)
+        div $t5, $t3
+        mflo $t6
+        mfhi $t7
+        beq $t7, $0, count_divisible_true
+        j count_divisible_false
+    count_divisible_true:
+        addi $t4, $t4, 1
+    count_divisible_false:
+        addi $t1, $t1, 4
+        addi $t0, $t0, 1
+        bne $t0, $t2, count_divisible_loop
+    move $s4, $t4
+
+display_results:
+    # Display numbers equal to N
+    li $v0, 4
+    la $a0, p4
+    syscall
+    li $v0, 1
+    move $a0, $s1
+    syscall
+    # Display numbers less than N 
+    li $v0, 4
+    la $a0, p5
+    syscall
+    li $v0, 1
+    move $a0, $s2
+    syscall
+    # Display numbers greater than N
+    li $v0, 4
+    la $a0, p6
+    syscall
+    li $v0, 1
+    move $a0, $s3
+    syscall
+    # Display numbers divisible by N
+    li $v0, 4
+    la $a0, p7
+    syscall
+    li $v0, 1
+    move $a0, $s4
+    syscall
+
+    li $v0, 10
+    syscall
