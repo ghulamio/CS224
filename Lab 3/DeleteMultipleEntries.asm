@@ -1,5 +1,10 @@
-# Write a subprogram to delete multiple values from a sorted linked list. 
-# For example, after executing this subprogram <1, 2, 2, 5, 5, 5, 7> becomes <1, 2, 5, 7>
+# CS224
+# Recitation No 3
+# Section No 3
+# Ghulam Ahmed
+# 22101001
+# 27 / 3 / 2023
+
 
 .data
     p1: .asciiz "\nEnter the size of the linked list: "
@@ -9,8 +14,6 @@
     line: .asciiz "\n --------------------------------------"
     nodeNumberLabel: .asciiz	"\n Node No.: "
     dataValueOfCurrentNode: .asciiz	"\n Data Value of Current Node: "
-    bracketopen: .asciiz "[ "
-    bracketclose: .asciiz " ]"
 
 .text
     main:
