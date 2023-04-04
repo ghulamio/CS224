@@ -5,14 +5,10 @@
 # 22101001
 # 27 / 3 / 2023  
 
-
 .data
-	originalListPrompt: .asciiz "\n Original list:" 
-	enterElementForIndexPrompt: .asciiz "Enter the element for element at index "
-	reversedListPrompt: .asciiz "\nAfter in-place reversal: "
 	p1: .asciiz "\nEnter size of the linked list: " 
 	p3: .asciiz "\nThe linked list is: "
-	p4: .asciiz "\n\nThe linked list in reverse order is: \n"
+	p4: .asciiz "\n\nThe linked list after being reversed is: \n"
     p2: .asciiz "Enter the node value: "
     line: .asciiz "\n --------------------------------------"
 	comma: .asciiz ", "
@@ -26,13 +22,12 @@
 		syscall
 		li	$v0, 5
 		syscall
-		
-		move	$s0, $v0 # $s0 contains the size of the linkedlist to form
+		addi $v0, $v0, 1
+		move	$s0, $v0 
 
 		move	$a0, $s0
-		# jal	initLinkedList
 		jal createLinkedList
-		move	$s1, $v0 # s1 points to the head of the linkedlist
+		move	$s1, $v0 
 		
 		li	$v0, 4
 		la	$a0, p3
@@ -42,10 +37,10 @@
 		
 		move	$a0, $s1
 		jal	ReverseLinkedList
-		move	$s1, $a0 # save $s1 to the value of $a0
+		move	$s1, $a0 
 		
 		li	$v0, 4
-		la	$a0, reversedListPrompt
+		la	$a0, p4
 		syscall
 		move	$a0, $s1
 		jal	printLinkedList
@@ -74,14 +69,15 @@
         move	$s2, $v0	# $s2 points to the first and last node of the linked list.
         move	$s3, $v0	# $s3 now points to the list head.
         # sll	$s4, $s1, 2	# sll: So that node 1 data value will be 4, node i data value will be 4*i
-        # Ask user to enter the data value of the first node.
-        li $v0, 4
-        la $a0, p2
-        syscall
-        li	$v0, 5
-        syscall
-        move	$s4, $v0	# $s4: data value of the first node.
-        sw	$s4, 4($s2)	# Store the data value.
+
+        # # Ask user to enter the data value of the first node.
+        # li $v0, 4
+        # la $a0, p2
+        # syscall
+        # li	$v0, 5
+        # syscall
+        # move	$s4, $v0	# $s4: data value of the first node.
+        # sw	$s4, 4($s2)	# Store the data value.
         
     addNode:
         beq	$s1, $s0, allDone
@@ -128,12 +124,14 @@
         sw	$s3, 4($sp)
         sw	$ra, 0($sp) 	# Save $ra just in case we may want to call a subprogram
 
-    # $a0: points to the linked list.
-    # $s0: Address of current
-    # s1: Address of next
-    # $2: Data of current
-    # $s3: Node counter: 1, 2, ...
+		# $a0: points to the linked list.
+		# $s0: Address of current
+		# s1: Address of next
+		# $2: Data of current
+		# $s3: Node counter: 1, 2, ...
         move $s0, $a0	# $s0: points to the current node.
+		# Skip the first node: header.
+		lw	$s0, 0($s0)	# $s0: points to the first node.
         li   $s3, 0
     printNextNode:
         beq	$s0, $zero, printedAll # $s0: Address of current node
@@ -174,48 +172,37 @@
         addi	$sp, $sp, 20
         jr	$ra
 		
-	ReverseLinkedList:
-		addi	$sp, $sp, -8
+
+		ReverseLinkedList:
+		addi	$sp, $sp, -20
 		sw	$a0, 0($sp)
 		sw	$ra, 4($sp)
+		sw 	$s0, 8($sp)
+		sw 	$s1, 12($sp)
+		sw 	$s2, 16($sp)
+
 		
-		
-		lw	$a0, 0($a0) # take the first node (root.next)
-		move	$s0, $a0 # store address copy of the first node
-		addi	$a1, $zero, 0 # set prev node
-		addi	$a2, $zero , 0 # set new first node
+		lw $a0, 0($a0)  # $a0: the subsequent node 
+		move $s0, $a0 
+                addi $a1, $zero, 0 # $a1: the previous node
+		addi $a2, $zero , 0 #  $a2: the head of reversed list
 		jal	ReverseLinkedListHelper
-		
-		sw	$zero, 0($s0) # set to null the previous first node's next		
-		lw	$a0, 0($sp) # pop root address from stack
-		sw	$a2, 0($a0) # set the first node (root.next= $a2)
-		
-		lw	$ra, 4($sp)
-		addi	$sp, $sp, 8
-		jr	$ra
 
+		lw $ra, 4($sp)
+		lw $s0, 8($sp)
+		lw $s1, 12($sp)
+		lw $s2, 16($sp)
+		addi $sp, $sp, 20
+		jr $ra
+		
 	ReverseLinkedListHelper:
-		addi	$sp, $sp, -12
-		sw	$a0, 0($sp) # $a0: current node
-		sw	$a1, 4($sp) # $a1: previous node
-		sw	$ra, 8($sp) 
-		
-		bne	$a0, $zero, helperRecursion
-		move	$a2, $a1 # $a2: head of reversed list
-		lw	$a0, 0($sp)
-		lw	$a1, 4($sp)
-		lw	$ra, 8($sp)
-		addi	$sp, $sp, 12
-		jr	$ra
-
-		helperRecursion:
-			move	$a1, $a0 # set prev ptr to current ptr
-			lw	$a0, 0($a0) # current ptr = current ptr.next
-			jal	ReverseLinkedListHelper
-			lw	$a0, 0($sp)
-			lw	$a1, 4($sp)
-			
-			sw	$a1, 0($a0)
-			lw	$ra, 8($sp)
-			addi	$sp, $sp, 12
-			jr	$ra
+		beq $s0, $zero, done 
+		lw $s1, 0($s0) # $s1: the subsequent node of the current node
+		sw $a1, 0($s0) 
+		move $a1, $s0 # $a1: the current node
+		move $s0, $s1 # $s0: the subsequent node
+		jal ReverseLinkedListHelper
+	done:
+		move $a0, $a1 
+		move $a2, $a0 
+		jr $ra

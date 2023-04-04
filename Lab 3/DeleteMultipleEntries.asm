@@ -5,7 +5,6 @@
 # 22101001
 # 27 / 3 / 2023
 
-
 .data
     p1: .asciiz "\nEnter the size of the linked list: "
     p2: .asciiz "Enter the node value: "

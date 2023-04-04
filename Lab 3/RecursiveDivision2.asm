@@ -58,23 +58,21 @@
         syscall
 
     recursive_division:
-        addi $sp, $sp, -8
-        sw $ra, 4($sp)
-        sw $a2, 0($sp)
-
-        move $t0, $a0
-        beq $a1, $0, end
-        div $t0, $a1
-        mflo $v0
-        mfhi $v1
-        addi $a2, $a2, 1
-        move $a0, $v1
-        jal recursive_division
-
-        lw $ra, 4($sp)
-        lw $a2, 0($sp)
-        addi $sp, $sp, 8
-        jr $ra
-    
-    end:
-        jr $ra
+        addi $sp, $sp, -4
+        sw $ra, 0($sp)
+        
+        bgt $a0, $a1, subtract
+        beq $a0, $a1, subtract
+        # if dividend < divisor, return quotient and remainder
+        move $v1, $a0 
+        addi $sp, $sp, 4
+        jr $ra        
+        
+        subtract:
+            sub $a0, $a0, $a1
+            addi $a2, $a2, 1
+            jal recursive_division
+            move $v0, $a2    
+            lw $ra, 0($sp)
+            addi $sp, $sp, 4
+            jr $ra

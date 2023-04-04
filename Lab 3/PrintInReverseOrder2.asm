@@ -164,62 +164,29 @@
         jr	$ra
 
 	printLinkedListReverse:
-		addi	$sp, $sp, -20
-		sw	$s0, 16($sp)
-		sw	$s1, 12($sp)
-		sw	$s2, 8($sp)
-		sw	$s3, 4($sp)
-		sw	$ra, 0($sp)	
-
-        move	$s1, $zero
-        move	$s0, $a0	# $s0: points to the list head.
-
-    printLinkedListReverseLoop:
-        beq	$s0, $zero, printLinkedListReverseDone # $s0: Address of current node
-        lw	$s2, 0($s0)	# $s2: Address of  next node
-        move	$s3, $s0
-        move	$s0, $s2	# Consider next node.
-        j	printLinkedListReverseLoop
-
-    printLinkedListReverseDone:
-        move	$s0, $s3
-        move	$a0, $s0
-        jal	printNode
-        move	$s0, $s3
-        move	$a0, $s0
-        jal	printLinkedListReverse
-	
-	printNode:
-		beq	$s0, $zero, printNodeDone # $s0: Address of current node
-		lw	$s1, 0($s0)	# $s1: Address of  next node
-		lw	$s2, 4($s0)	# $s2: Data of current node
-		la	$a0, line
-		li	$v0, 4
-		syscall		
-
-		la	$a0, nodeNumberLabel
-		li	$v0, 4
-		syscall
-		move	$a0, $s3	# $s3: Node number (position) of current node
-		li	$v0, 1
-		syscall
+		addi	$sp, $sp, -8
+		sw	$a0, 0($sp)
+		sw	$ra, 4($sp)
 		
-		la	$a0, dataValueOfCurrentNode
-		li	$v0, 4
-		syscall
-		move	$a0, $s2	# $s2: Data of current node
-		li	$v0, 1		
-		syscall	
+		bne	$a0, $zero, continue
+
+		lw	$a0, 0($sp) # $a0: points to the linked list.
+		lw	$ra, 4($sp) 
+		addi	$sp, $sp, 8
+		jr	$ra 
+
+		continue:
+			lw	$a0, 0($a0) 
+			jal	printLinkedListReverse
+			lw	$a0, 0($sp)
+			li	$v0, 1
+			lw	$a0, 4($a0)
+			syscall	
+			li	$v0, 4
+			la $a0, comma
+			syscall
 		
-		la	$a0, comma
-		li	$v0, 4
-		syscall
-	
-	printNodeDone:
-		lw	$ra, 0($sp)
-		lw	$s3, 4($sp)
-		lw	$s2, 8($sp)
-		lw	$s1, 12($sp)
-		lw	$s0, 16($sp)
-		addi	$sp, $sp, 20
+		lw $ra, 4($sp)
+		addi $sp, $sp, 8
 		jr	$ra
+	

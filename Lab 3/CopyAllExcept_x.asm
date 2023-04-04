@@ -119,14 +119,6 @@
             jr	$ra
 
     printLinkedList:
-        # Print linked list nodes in the following format
-        # --------------------------------------
-        # Node No: xxxx (dec)
-        # Address of Current Node: xxxx (hex)
-        # Address of Next Node: xxxx (hex)
-        # Data Value of Current Node: xxx (dec)
-        # --------------------------------------
-
         # Save $s registers used
             addi	$sp, $sp, -20
             sw	$s0, 16($sp)
@@ -135,22 +127,21 @@
             sw	$s3, 4($sp)
             sw	$ra, 0($sp) 	# Save $ra just in case we may want to call a subprogram
 
-        # $a0: points to the linked list.
-        # $s0: Address of current
-        # s1: Address of next
-        # $2: Data of current
-        # $s3: Node counter: 1, 2, ...
+            # $a0: points to the linked list.
+            # $s0: Address of current
+            # s1: Address of next
+            # $2: Data of current
+            # $s3: Node counter: 1, 2, ...
             move $s0, $a0	# $s0: points to the current node.
             li   $s3, 0
         printNextNode:
             beq	$s0, $zero, printedAll
-                        # $s0: Address of current node
             lw	$s1, 0($s0)	# $s1: Address of  next node
             lw	$s2, 4($s0)	# $s2: Data of current node
             addi	$s3, $s3, 1
-        # $s0: address of current node: print in hex.
-        # $s1: address of next node: print in hex.
-        # $s2: data field value of current node: print in decimal.
+            # $s0: address of current node: print in hex.
+            # $s1: address of next node: print in hex.
+            # $s2: data field value of current node: print in decimal.
             la	$a0, line
             li	$v0, 4
             syscall		# Print line seperator
@@ -186,9 +177,10 @@
             li	$v0, 1		
             syscall	
 
-        # Now consider next node.
+            # Now consider next node.
             move	$s0, $s1	# Consider next node.
             j	printNextNode
+
         printedAll:
         # Restore the register values
             lw	$ra, 0($sp)
@@ -200,13 +192,14 @@
             jr	$ra
 
     copyAllExcept_x:
-        addi $sp, $sp, -28
-        sw $s0, 24($sp)
-        sw $s1, 20($sp)
-        sw $s2, 16($sp)
-        sw $s3, 12($sp)
-        sw $s4, 8($sp)
-        sw $s5, 4($sp)
+        addi $sp, $sp, -32
+        sw $s0, 28($sp)
+        sw $s1, 24($sp)
+        sw $s2, 20($sp)
+        sw $s3, 16($sp)
+        sw $s4, 12($sp)
+        sw $s5, 8($sp)
+        sw $s6, 4($sp)
         sw $ra, 0($sp)
 
         move $s0, $a0 # $s0: points to the linked list.
@@ -243,11 +236,12 @@
             move $v0, $s3
 
             lw $ra, 0($sp)
-            lw $s5, 4($sp)
-            lw $s4, 8($sp)
-            lw $s3, 12($sp)
-            lw $s2, 16($sp)
-            lw $s1, 20($sp)
-            lw $s0, 24($sp)
-            addi $sp, $sp, 28
+            lw $s6, 4($sp)
+            lw $s5, 8($sp)
+            lw $s4, 12($sp)
+            lw $s3, 16($sp)
+            lw $s2, 20($sp)
+            lw $s1, 24($sp)
+            lw $s0, 28($sp)
+            addi $sp, $sp, 32
             jr $ra
