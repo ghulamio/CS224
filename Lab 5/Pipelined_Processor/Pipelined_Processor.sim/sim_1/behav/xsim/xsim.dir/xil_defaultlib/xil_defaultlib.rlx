@@ -1,0 +1,10 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,xil_defaultlib,,,,,,
+C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new/tb_pipelined_processor.sv,1683626993,systemVerilog,,,,tb_pipelined_processor,,xil_defaultlib,C:/Xilinx/Vivado/2017.4/data/xilinx_vip/include,,,,,
+C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/basys3_pipelined.sv,1683563661,systemVerilog,,,,basys3_pipelined,,xil_defaultlib,C:/Xilinx/Vivado/2017.4/data/xilinx_vip/include,,,,,
+C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/debouncer.sv,1683563174,systemVerilog,,C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/display_controller.sv,,debouncer,,xil_defaultlib,C:/Xilinx/Vivado/2017.4/data/xilinx_vip/include,,,,,
+C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/display_controller.sv,1683473828,systemVerilog,,C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv,,display_controller,,xil_defaultlib,C:/Xilinx/Vivado/2017.4/data/xilinx_vip/include,,,,,
+C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv,1683627073,systemVerilog,,C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new/tb_pipelined_processor.sv,,HazardUnit;PipeDtoE;PipeEtoM;PipeFtoD;PipeMtoW;PipeWtoF;adder;alu;aludec;controller;datapath;dmem;flopr;imem;leftrotate;maindec;mux2;mux4;regfile;signext;sl2;top_mips,,xil_defaultlib,C:/Xilinx/Vivado/2017.4/data/xilinx_vip/include,,,,,

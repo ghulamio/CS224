@@ -1,0 +1,1262 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Sun Apr 30 12:37:53 2023
+# Process ID: 25800
+# Current directory: C:/Users/gahme/Desktop/Lab4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent25176 C:\Users\gahme\Desktop\Lab4\Lab4.xpr
+# Log file: C:/Users/gahme/Desktop/Lab4/vivado.log
+# Journal file: C:/Users/gahme/Desktop/Lab4\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/gahme/Desktop/Lab4/Lab4.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim/xsim.dir/MIPS_Processor_tb_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Sun Apr 30 16:08:15 2023...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:06 ; elapsed = 00:00:09 . Memory (MB): peak = 795.875 ; gain = 8.809
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-1546] variable writedata might have multiple concurrent drivers [C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv:235]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close [ open C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv w ]
+add_files C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv]
+update_compile_order -fileset sources_1
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor1
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor1
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:07 . Memory (MB): peak = 831.457 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor1
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor1
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:02 ; elapsed = 00:00:06 . Memory (MB): peak = 831.457 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor1
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor1
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor1
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor1
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+add_bp {C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv} 136
+remove_bps -file {C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv} -line 136
+add_bp {C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv} 136
+remove_bps -file {C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv} -line 136
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor1
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor1
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '2' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+set_property is_enabled true [get_files  C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv]
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor1.sv]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:03 ; elapsed = 00:00:05 . Memory (MB): peak = 834.797 ; gain = 0.000
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'MIPS_Processor_tb' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj MIPS_Processor_tb_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module mips
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module MIPS_Processor_tb
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto 183a5b1f4cdb4d2e92513d316a467d16 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot MIPS_Processor_tb_behav xil_defaultlib.MIPS_Processor_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.flopr(WIDTH=32)
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.mips
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.MIPS_Processor
+Compiling module xil_defaultlib.MIPS_Processor_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot MIPS_Processor_tb_behav
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "MIPS_Processor_tb_behav -key {Behavioral:sim_1:Functional:MIPS_Processor_tb} -tclbatch {MIPS_Processor_tb.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source MIPS_Processor_tb.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv" Line 58
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'MIPS_Processor_tb_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+save_wave_config {C:/Users/gahme/Desktop/Lab4/MIPS_Processor_tb_behav.wcfg}
+add_files -fileset sim_1 -norecurse C:/Users/gahme/Desktop/Lab4/MIPS_Processor_tb_behav.wcfg
+set_property xsim.view C:/Users/gahme/Desktop/Lab4/MIPS_Processor_tb_behav.wcfg [get_filesets sim_1]
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Sun Apr 30 21:38:50 2023...

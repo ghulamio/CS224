@@ -1,0 +1,222 @@
+CS224 / Lab No. 7
+Sec No. 3
+Ghulam Ahmed
+22101001 
+
+CS224 / Lab No. 7
+Sec No. 5
+Muhammad Rowaha
+22101023
+
+a)
+The special function registers (SFRs) for the I/O devices involved in Part2-b are:
+    AD1PCFG - This SFR is used to configure the analog-to-digital (A/D) converter pins as digital I/O. It is set to 0xFFFF in the code to configure all AN pins as digital I/O. 
+    JTAGEN_bit - This SFR bit is used to enable or disable the Joint Test Action Group (JTAG) interface. In the code, it is set to 0 to disable the JTAG interface. 
+    TRISA - This SFR controls whether the port A is to be used for input or output. For dc motor, it is set to 0x0000 (as output)
+    LATA - This SFR chooses the output for a digital output port. Initially, LATA is written 0x0000 so the motor is off.
+    PORTA - This SFR acts as a buffer for the values to be written to the peripheral
+    TRISE - This SFR controls whether the port E is to be used for input or output. For dc motor, it is set to 0xFFFF (as input)
+    PORTE - This SFR acts as a buffer for the values read from the peripheral 
+
+b)
+/**
+  This is a DC Motor Implementation for Lab 7 Part 2b
+
+  The motor can be turned clockwise, counterclockwise, or stopped.
+  The direction of the motor is controlled by the buttons on the board.
+  The motor is connected to PortA, while the buttons are connected to PortE.
+
+  PortA is 5v pull-up
+  PortE is 3v3 pull-up
+
+*/
+
+
+void init() {
+     LATA = 0x0000; // initially motor is off as this sets RA1 and RA2 to zero
+                    // so Control1 = Control2 = 0
+}
+
+void main() {
+     // Set All Pins on PortB to Digital I/O
+     AD1PCFG = 0xFFFF; // setting all pins to 1 sets them to Digital I/O
+     DDPCON.JTAGEN = 0; // disable JTAG
+
+     // Initialize PortA as an output port
+     TRISA = 0x0000;
+
+     // Initialize PortE as input port
+     TRISE = 0xFFFF;
+
+     // Initialize the motor to be off
+     init();
+
+     // Loop forever
+     while(1) {
+            // Check if the button is pressed
+            if (portE != 0x0003)
+               // Turn the motor in direction of the button pressed
+               portA = portE << 1;
+            else
+                // Stop the motor
+                portA = 0x0000;
+     }
+}
+
+3) 
+The special function registers (SFRs) for the I/O device(s) involved in Part 2-c are:
+
+    portA - This represents the SFR for Port A, which is used to output the binary patterns for the digits on the seven-segment display. 
+    portE - This represents the SFR for Port E, which is used to select which digit is displayed on the seven-segment display. 
+    AD1PCFG - This SFR is used to configure the analog-to-digital (A/D) converter pins as digital I/O. It is set to 0xFFFF in the code to configure all AN pins as digital I/O. 
+    JTAGEN_bit - This SFR bit is used to enable or disable the Joint Test Action Group (JTAG) interface. In the code, it is set to 0 to disable the JTAG interface. 
+    TRISA - This SFR is used to configure the data direction of Port A pins as inputs or outputs. It is set to 0x00 in the code to configure all Port A pins as outputs. 
+    TRISE - This SFR is used to configure the data direction of Port E pins as inputs or outputs. It is set to 0x00 in the code to configure all Port E pins as outputs. 
+
+4)
+/*
+Configuration for the code below:
+
+Connect portA to J1 Port of 4 Digit Seven Segment Module
+Jumpers of portA are : 5V, pull down ( top one to left, other to right )
+
+Connect portE to J2 Port of 4 Digit Seven Segment Module
+Jumpers of portE are : 5V, pull down ( top one to left, other to right )
+
+
+This code displays the cubes of the numbers from 1 to 21 on a 4-digit 7-segment display.
+The display is connected to Port A and Port E of the microcontroller.
+Port A is used to output the binary patterns for the digits, and Port E is used to select which digit is displayed.
+The binary patterns for the digits are stored in the `binary_pattern` array.
+The `main()` function loops forever, displaying the cubes of the numbers from 1 to 21.
+
+*/
+
+
+unsigned char binary_pattern[] = {
+    /* 0 */ 0x3F,
+    /* 1 */ 0x06,
+    /* 2 */ 0x5B,
+    /* 3 */ 0x4F,
+    /* 4 */ 0x66,
+    /* 5 */ 0x6D,
+    /* 6 */ 0x7D,
+    /* 7 */ 0x07,
+    /* 8 */ 0x7F,
+    /* 9 */ 0x6F,
+};
+unsigned char digitsArr[]= {0,0,0,0};
+unsigned char indexCount, digit;
+unsigned char value = 1;
+unsigned int cube;
+unsigned int x, y;
+
+// This function displays a single digit on the seven segment display. The unit parameter is the digit to be displayed, while the pause parameter controls the duration of the display
+void displayOneDigit(char unit, int pause) {
+     for (x = 0; x < pause; x++){
+         for (y = 0; y < pause; y++) {
+             portA = binary_pattern[unit];
+             portE = 0x01;
+             Delay_ms(1);
+         }
+     }
+}
+
+void displayTwoDigit(char unit, char ten, int pause) {
+     for (x = 0; x < pause; x++){
+         for (y = 0; y < pause; y++) {
+             portA = binary_pattern[unit];
+             portE = 0x02;
+             Delay_ms(1);
+
+             portA = binary_pattern[ten];
+             portE = 0x01;
+             Delay_ms(1);
+         }
+     }
+}
+
+void displayThreeDigit(char unit, char ten, char hundred, int pause) {
+     for (x = 0; x < pause; x++){
+         for (y = 0; y < pause; y++) {
+             portA = binary_pattern[unit];
+             portE = 0x04;
+             Delay_ms(1);
+
+             portA = binary_pattern[ten];
+             portE = 0x02;
+             Delay_ms(1);
+
+             portA = binary_pattern[hundred];
+             portE = 0x01;
+             Delay_ms(1);
+         }
+     }
+}
+
+void displayFourDigit(char unit, char ten, char hundred, char thousand, int pause) {
+     for (x = 0; x < pause; x++){
+         for (y = 0; y < pause; y++) {
+             portA = binary_pattern[unit];
+             portE = 0x08;
+             Delay_ms(1);
+
+             portA = binary_pattern[ten];
+             portE = 0x04;
+             Delay_ms(1);
+
+             portA = binary_pattern[hundred];
+             portE = 0x02;
+             Delay_ms(1);
+
+             portA = binary_pattern[thousand];
+             portE = 0x01;
+             Delay_ms(1);
+         }
+     }
+}
+
+// This function breaks the number into its individual digits. The number parameter is the number to be broken, while the digitsArr parameter is the array to store the digits
+void breakIntoDigits(int number) {
+      indexCount = 0;
+      digit = 0;
+      while(number) {
+           digit = number % 10;
+           digitsArr[indexCount] = digit;
+           indexCount = indexCount + 1;
+           number = number / 10;
+      }
+}
+
+void main() {
+    // Initialize the PIC
+    AD1PCFG = 0xFFFF;      // Configure AN pins as digital I/O
+    JTAGEN_bit = 0;        // Disable JTAG
+
+    // Initialize Port A and Port E as outputs
+    TRISA = 0x00;  //portA is output to D
+    TRISE = 0X00;  //portE is output to AN
+
+    while(1){
+        // Calculate the cube of the value
+        cube = value * value * value;
+        // Break the cube into its individual digits
+        breakIntoDigits(cube);
+        // Display the digits on the seven segment display
+        if (cube / 10 == 0) {  // is a one digit number
+            displayOneDigit(digitsArr[0], 40);
+        } else if (cube / 100 == 0){ // is a two digit number
+        displayTwoDigit(digitsArr[0], digitsArr[1], 40);
+        } else if (cube / 1000 == 0) { // is three digit number
+        displayThreeDigit(digitsArr[0], digitsArr[1], digitsArr[2], 40);
+        } else { // is four digit number
+        displayFourDigit(digitsArr[0], digitsArr[1], digitsArr[2], digitsArr[3], 40);
+        }
+
+        value = value + 1;
+        
+        // Reset the value to 1 if it exceeds 21
+        if (value > 21)
+            value = 1;
+    }
+}

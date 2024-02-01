@@ -1,0 +1,7 @@
+0.6
+2017.4
+Dec 15 2017
+21:07:18
+C:/Users/gahme/Desktop/Lab4/Lab4.sim/sim_1/behav/xsim/glbl.v,1513215259,verilog,,,,glbl,,xil_defaultlib,,,,,,
+C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv,1682878440,systemVerilog,,,,MIPS_Processor_tb,,xil_defaultlib,C:/Xilinx/Vivado/2017.4/data/xilinx_vip/include,,,,,
+C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sources_1/new/MIPS_Processor.sv,1682967610,systemVerilog,,C:/Users/gahme/Desktop/Lab4/Lab4.srcs/sim_1/new/MIPS_Processor_tb.sv,,MIPS_Processor;adder;alu;aludec;controller;datapath;dmem;flopr;imem;leftrotate;maindec;mips;mux2;regfile;signext;sl2,,xil_defaultlib,C:/Xilinx/Vivado/2017.4/data/xilinx_vip/include,,,,,

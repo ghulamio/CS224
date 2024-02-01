@@ -1,0 +1,375 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Mon May  8 16:00:36 2023
+# Process ID: 11344
+# Current directory: C:/Users/gahme/Desktop/Pipelined_Processor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent4140 C:\Users\gahme\Desktop\Pipelined_Processor\Pipelined_Processor.xpr
+# Log file: C:/Users/gahme/Desktop/Pipelined_Processor/vivado.log
+# Journal file: C:/Users/gahme/Desktop/Pipelined_Processor\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.xpr
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2017.4/data/ip'.
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+file mkdir C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new
+set_property SOURCE_SET sources_1 [get_filesets sim_1]
+close [ open C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new/tb_pipelined_processor.sv w ]
+add_files -fileset sim_1 C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new/tb_pipelined_processor.sv
+update_compile_order -fileset sim_1
+close [ open C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/basys3_pipelined.sv w ]
+add_files C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/basys3_pipelined.sv
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close [ open C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/debouncer.sv w ]
+add_files C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/debouncer.sv
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'basys3_pipelined' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj basys3_pipelined_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/debouncer.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module debouncer
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/display_controller.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module display_controller
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeWtoF
+INFO: [VRFC 10-311] analyzing module PipeFtoD
+INFO: [VRFC 10-311] analyzing module PipeDtoE
+INFO: [VRFC 10-311] analyzing module PipeEtoM
+INFO: [VRFC 10-311] analyzing module PipeMtoW
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-311] analyzing module top_mips
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/basys3_pipelined.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module basys3_pipelined
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto efc8356dbd514e429e780b211f20fd93 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot basys3_pipelined_behav xil_defaultlib.basys3_pipelined xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-2538] module instantiation should have an instance name [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/basys3_pipelined.sv:39]
+ERROR: [VRFC 10-2063] Module <controller> not found while processing module instance <CU> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:461]
+ERROR: [VRFC 10-2063] Module <datapath> not found while processing module instance <DP> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:463]
+ERROR: [VRFC 10-2063] Module <display_controller> not found while processing module instance <dc> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/basys3_pipelined.sv:62]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+set_property top tb_pipelined_processor [get_filesets sim_1]
+set_property top_lib xil_defaultlib [get_filesets sim_1]
+update_compile_order -fileset sim_1
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_pipelined_processor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj tb_pipelined_processor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new/tb_pipelined_processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_pipelined_processor
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto efc8356dbd514e429e780b211f20fd93 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pipelined_processor_behav xil_defaultlib.tb_pipelined_processor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-426] cannot find port MemToRegD on this module [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:465]
+ERROR: [VRFC 10-426] cannot find port ALUControlID on this module [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:464]
+ERROR: [VRFC 10-2063] Module <PipeWtoF> not found while processing module instance <wf> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:258]
+ERROR: [VRFC 10-2063] Module <mux2> not found while processing module instance <pc_mux> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:267]
+ERROR: [VRFC 10-2063] Module <imem> not found while processing module instance <im1> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:269]
+ERROR: [VRFC 10-2063] Module <PipeFtoD> not found while processing module instance <fd> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:273]
+ERROR: [VRFC 10-2063] Module <regfile> not found while processing module instance <rf> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:279]
+ERROR: [VRFC 10-2063] Module <signext> not found while processing module instance <se> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:280]
+ERROR: [VRFC 10-2063] Module <leftrotate> not found while processing module instance <lr> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:287]
+ERROR: [VRFC 10-2063] Module <sl2> not found while processing module instance <shiftimm> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:296]
+ERROR: [VRFC 10-2063] Module <adder> not found while processing module instance <branchadd> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:297]
+ERROR: [VRFC 10-2063] Module <PipeDtoE> not found while processing module instance <de> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:303]
+ERROR: [VRFC 10-2063] Module <mux4> not found while processing module instance <srcaemux> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:319]
+ERROR: [VRFC 10-2063] Module <alu> not found while processing module instance <a> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:322]
+ERROR: [VRFC 10-2063] Module <PipeEtoM> not found while processing module instance <em> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:329]
+ERROR: [VRFC 10-2063] Module <dmem> not found while processing module instance <DM> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:340]
+ERROR: [VRFC 10-2063] Module <PipeMtoW> not found while processing module instance <mw> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:343]
+ERROR: [VRFC 10-2063] Module <HazardUnit> not found while processing module instance <hu> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:365]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_pipelined_processor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj tb_pipelined_processor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeWtoF
+INFO: [VRFC 10-311] analyzing module PipeFtoD
+INFO: [VRFC 10-311] analyzing module PipeDtoE
+INFO: [VRFC 10-311] analyzing module PipeEtoM
+INFO: [VRFC 10-311] analyzing module PipeMtoW
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-311] analyzing module top_mips
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new/tb_pipelined_processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_pipelined_processor
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto efc8356dbd514e429e780b211f20fd93 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pipelined_processor_behav xil_defaultlib.tb_pipelined_processor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-426] cannot find port MemtoRegD on this module [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new/tb_pipelined_processor.sv:42]
+ERROR: [VRFC 10-2063] Module <controller> not found while processing module instance <CU> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:461]
+ERROR: [VRFC 10-2063] Module <datapath> not found while processing module instance <DP> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:463]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_pipelined_processor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj tb_pipelined_processor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeWtoF
+INFO: [VRFC 10-311] analyzing module PipeFtoD
+INFO: [VRFC 10-311] analyzing module PipeDtoE
+INFO: [VRFC 10-311] analyzing module PipeEtoM
+INFO: [VRFC 10-311] analyzing module PipeMtoW
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-311] analyzing module top_mips
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new/tb_pipelined_processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_pipelined_processor
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto efc8356dbd514e429e780b211f20fd93 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pipelined_processor_behav xil_defaultlib.tb_pipelined_processor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+ERROR: [VRFC 10-426] cannot find port ALUControlID on this module [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:464]
+ERROR: [VRFC 10-2063] Module <PipeWtoF> not found while processing module instance <wf> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:258]
+ERROR: [VRFC 10-2063] Module <mux2> not found while processing module instance <pc_mux> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:267]
+ERROR: [VRFC 10-2063] Module <imem> not found while processing module instance <im1> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:269]
+ERROR: [VRFC 10-2063] Module <PipeFtoD> not found while processing module instance <fd> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:273]
+ERROR: [VRFC 10-2063] Module <regfile> not found while processing module instance <rf> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:279]
+ERROR: [VRFC 10-2063] Module <signext> not found while processing module instance <se> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:280]
+ERROR: [VRFC 10-2063] Module <leftrotate> not found while processing module instance <lr> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:287]
+ERROR: [VRFC 10-2063] Module <sl2> not found while processing module instance <shiftimm> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:296]
+ERROR: [VRFC 10-2063] Module <adder> not found while processing module instance <branchadd> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:297]
+ERROR: [VRFC 10-2063] Module <PipeDtoE> not found while processing module instance <de> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:303]
+ERROR: [VRFC 10-2063] Module <mux4> not found while processing module instance <srcaemux> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:319]
+ERROR: [VRFC 10-2063] Module <alu> not found while processing module instance <a> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:322]
+ERROR: [VRFC 10-2063] Module <PipeEtoM> not found while processing module instance <em> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:329]
+ERROR: [VRFC 10-2063] Module <dmem> not found while processing module instance <DM> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:340]
+ERROR: [VRFC 10-2063] Module <PipeMtoW> not found while processing module instance <mw> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:343]
+ERROR: [VRFC 10-2063] Module <HazardUnit> not found while processing module instance <hu> [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:365]
+ERROR: [XSIM 43-3322] Static elaboration of top level Verilog design unit(s) in library work failed.
+INFO: [USF-XSim-69] 'elaborate' step finished in '1' seconds
+INFO: [USF-XSim-99] Step results log file:'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/elaborate.log'
+ERROR: [USF-XSim-62] 'elaborate' step failed with error(s). Please check the Tcl console output or 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/elaborate.log' file for more information.
+ERROR: [Vivado 12-4473] Detected error while running simulation. Please correct the issue and retry this operation.
+ERROR: [Common 17-39] 'launch_simulation' failed due to earlier errors.
+launch_simulation
+INFO: [Vivado 12-5682] Launching behavioral simulation in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+INFO: [SIM-utils-51] Simulation object is 'sim_1'
+INFO: [SIM-utils-54] Inspecting design source files for 'tb_pipelined_processor' in fileset 'sim_1'...
+INFO: [USF-XSim-97] Finding global include files...
+INFO: [USF-XSim-98] Fetching design files from 'sim_1'...
+INFO: [USF-XSim-2] XSim::Compile design
+INFO: [USF-XSim-61] Executing 'COMPILE and ANALYZE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+"xvlog --incr --relax -L xil_defaultlib -prj tb_pipelined_processor_vlog.prj"
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module PipeWtoF
+INFO: [VRFC 10-311] analyzing module PipeFtoD
+INFO: [VRFC 10-311] analyzing module PipeDtoE
+INFO: [VRFC 10-311] analyzing module PipeEtoM
+INFO: [VRFC 10-311] analyzing module PipeMtoW
+INFO: [VRFC 10-311] analyzing module datapath
+INFO: [VRFC 10-311] analyzing module HazardUnit
+INFO: [VRFC 10-311] analyzing module top_mips
+INFO: [VRFC 10-311] analyzing module imem
+INFO: [VRFC 10-311] analyzing module controller
+INFO: [VRFC 10-311] analyzing module dmem
+INFO: [VRFC 10-311] analyzing module maindec
+INFO: [VRFC 10-311] analyzing module aludec
+INFO: [VRFC 10-311] analyzing module regfile
+INFO: [VRFC 10-311] analyzing module alu
+INFO: [VRFC 10-311] analyzing module adder
+INFO: [VRFC 10-311] analyzing module sl2
+INFO: [VRFC 10-311] analyzing module signext
+INFO: [VRFC 10-311] analyzing module leftrotate
+INFO: [VRFC 10-311] analyzing module flopr
+INFO: [VRFC 10-311] analyzing module mux2
+INFO: [VRFC 10-311] analyzing module mux4
+INFO: [VRFC 10-2263] Analyzing SystemVerilog file "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new/tb_pipelined_processor.sv" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_pipelined_processor
+INFO: [USF-XSim-69] 'compile' step finished in '1' seconds
+INFO: [USF-XSim-3] XSim::Elaborate design
+INFO: [USF-XSim-61] Executing 'ELABORATE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+Vivado Simulator 2017.4
+Copyright 1986-1999, 2001-2016 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2017.4/bin/unwrapped/win64.o/xelab.exe -wto efc8356dbd514e429e780b211f20fd93 --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_pipelined_processor_behav xil_defaultlib.tb_pipelined_processor xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 5 for port WriteRegW [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:471]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port b [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:287]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port RotatedD [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:303]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 5 for port RsD [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:304]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port RotatedE [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:308]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 5 for port RsE [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:309]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 3 for port ALUControlE [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:311]
+WARNING: [VRFC 10-278] actual bit length 32 differs from formal bit length 3 for port alucont [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:322]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 5 for port d0 [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:323]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port RotatedE [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:330]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port RotatedM [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:334]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 32 for port RotatedM [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:344]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 5 for port rsE [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:370]
+WARNING: [VRFC 10-278] actual bit length 1 differs from formal bit length 5 for port rsD [C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv:371]
+Completed static elaboration
+Starting simulation data flow analysis
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.maindec
+Compiling module xil_defaultlib.aludec
+Compiling module xil_defaultlib.controller
+Compiling module xil_defaultlib.PipeWtoF
+Compiling module xil_defaultlib.mux2(WIDTH=32)
+Compiling module xil_defaultlib.imem
+Compiling module xil_defaultlib.PipeFtoD
+Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.signext
+Compiling module xil_defaultlib.leftrotate
+Compiling module xil_defaultlib.sl2
+Compiling module xil_defaultlib.adder
+Compiling module xil_defaultlib.PipeDtoE
+Compiling module xil_defaultlib.mux4(WIDTH=32)
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.mux2(WIDTH=5)
+Compiling module xil_defaultlib.PipeEtoM
+Compiling module xil_defaultlib.dmem
+Compiling module xil_defaultlib.PipeMtoW
+Compiling module xil_defaultlib.HazardUnit
+Compiling module xil_defaultlib.datapath
+Compiling module xil_defaultlib.top_mips
+Compiling module xil_defaultlib.tb_pipelined_processor
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot tb_pipelined_processor_behav
+
+****** Webtalk v2017.4 (64-bit)
+  **** SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+  **** IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+    ** Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+
+source C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim/xsim.dir/tb_pipelined_processor_behav/webtalk/xsim_webtalk.tcl -notrace
+INFO: [Common 17-206] Exiting Webtalk at Mon May  8 20:16:17 2023...
+INFO: [USF-XSim-69] 'elaborate' step finished in '4' seconds
+INFO: [USF-XSim-4] XSim::Simulate design
+INFO: [USF-XSim-61] Executing 'SIMULATE' step in 'C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.sim/sim_1/behav/xsim'
+INFO: [USF-XSim-98] *** Running xsim
+   with args "tb_pipelined_processor_behav -key {Behavioral:sim_1:Functional:tb_pipelined_processor} -tclbatch {tb_pipelined_processor.tcl} -log {simulate.log}"
+INFO: [USF-XSim-8] Loading simulator feature
+Vivado Simulator 2017.4
+Time resolution is 1 ps
+source tb_pipelined_processor.tcl
+# set curr_wave [current_wave_config]
+# if { [string length $curr_wave] == 0 } {
+#   if { [llength [get_objects]] > 0} {
+#     add_wave /
+#     set_property needs_save false [current_wave_config]
+#   } else {
+#      send_msg_id Add_Wave-1 WARNING "No top level signals found. Simulator will start without a wave window. If you want to open a wave window go to 'File->New Waveform Configuration' or type 'create_wave_config' in the TCL console."
+#   }
+# }
+# run 1000ns
+$finish called at time : 210 ns : File "C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sim_1/new/tb_pipelined_processor.sv" Line 67
+INFO: [USF-XSim-96] XSim completed. Design snapshot 'tb_pipelined_processor_behav' loaded.
+INFO: [USF-XSim-97] XSim simulation ran for 1000ns
+launch_simulation: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 844.930 ; gain = 16.031
+close_sim
+INFO: [Simtcl 6-16] Simulation closed
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon May  8 21:42:55 2023...

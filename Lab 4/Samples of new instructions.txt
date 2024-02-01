@@ -1,0 +1,48 @@
+## lb example
+addi $t0, $zero, 0x80A0
+sw $t0, 60($zero)
+lb $t0, 60($zero)
+add $zero, $zero, $t0
+lb $t0, 63($zero)
+add $zero, $zero, $t0
+
+## lh example
+addi $t0, $zero, 0x80A0
+sw $t0, 60($zero)
+lh $t0, 60($zero)
+add $zero, $zero, $t0
+lh $t1, 62($zero)
+add $zero, $zero, $t0
+
+## rol example
+addi $t0, $zero, 0xA0A0
+rol $t1, $t0, 2 # $t1 should be 0xFFFE8283
+addi $t2, $t1, 2
+
+## spc example
+spc 40($zero)
+lw $t0, 40($zero)
+addi $t0, $t0, 8 # at this point pc and aluout should be equal
+
+## jr example
+addi $ra, $zero, 12
+jr $ra # should jump to the 4th instruction in imem
+add $ra, $zero, $zero
+addi $ra, $ra, -2
+
+## lui example
+lui $t0, 0x80FF
+add $zero, $t0, $zero
+
+## xori example
+addi $t0, $zero, 0x7FFF
+addi $t0, $t0, 1
+addi $t1, $zero, -1
+xori $t1, $t1, 0x8000
+addi $t1, $t1, 1
+add $t2, $t1, $t0 # result should be 0
+
+## jal example
+jal 0x50 # This assumes that the instruction is placed in address 0x48
+addi $ra, $zero, 5
+addi $ra, $ra, 4 # aluout and PC must be equal at this point

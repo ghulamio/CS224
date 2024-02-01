@@ -1,0 +1,63 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue May  9 12:00:23 2023
+# Process ID: 8204
+# Current directory: C:/Users/gahme/Desktop/Pipelined_Processor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent11188 C:\Users\gahme\Desktop\Pipelined_Processor\Pipelined_Processor.xpr
+# Log file: C:/Users/gahme/Desktop/Pipelined_Processor/vivado.log
+# Journal file: C:/Users/gahme/Desktop/Pipelined_Processor\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.xpr
+update_compile_order -fileset sources_1
+close [ open C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipelineSkeleton.sv w ]
+add_files C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipelineSkeleton.sv
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property is_enabled false [get_files  C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv]
+set_property is_enabled true [get_files  C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv]
+update_compile_order -fileset sources_1
+launch_runs synth_1 -jobs 4
+wait_on_run synth_1
+reset_run synth_1
+close_project
+open_project C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+set_property is_enabled false [get_files  C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv]
+update_compile_order -fileset sources_1
+launch_simulation
+set_property is_enabled true [get_files  C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv]
+set_property is_enabled false [get_files  C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipelineSkeleton.sv]
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_pipelined_processor.tcl
+close_sim
+launch_simulation
+source tb_pipelined_processor.tcl
+add_bp {C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv} 514
+close_sim
+launch_simulation
+source tb_pipelined_processor.tcl
+remove_bps -file {C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.srcs/sources_1/new/pipes.sv} -line 514
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation
+source tb_pipelined_processor.tcl
+close_sim
+launch_simulation
+source tb_pipelined_processor.tcl
+close_sim
+launch_simulation
+source tb_pipelined_processor.tcl
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+launch_simulation

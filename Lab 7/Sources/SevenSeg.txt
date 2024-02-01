@@ -1,0 +1,122 @@
+/*
+Configuration for the code below:
+
+Connect portA to J1 Port of 4 Digit Seven Segment Module
+Jumpers of portA are : 5V, pull down ( top one to left, other to right )
+
+Connect portE to J2 Port of 4 Digit Seven Segment Module
+Jumpers of portE are : 5V, pull down ( top one to left, other to right )
+
+*/
+
+
+unsigned char binary_pattern[]={0x3F,0x06,0x5B,0x4F,0x66,0x6D,0x7D,0x07,0x7F,0x6F};
+unsigned char digitsArr[]= {0,0,0,0};
+unsigned char indexCount, digit;
+unsigned char value = 1;
+unsigned int cube;
+unsigned int x, y;
+
+void displayOneDigit(char unit, int pause) {
+     for (x = 0; x < pause; x++){
+         for (y = 0; y < pause; y++) {
+             portA = binary_pattern[unit];
+             portE = 0x01;
+             Delay_ms(1);
+         }
+     }
+}
+
+void displayTwoDigit(char unit, char ten, int pause) {
+     for (x = 0; x < pause; x++){
+         for (y = 0; y < pause; y++) {
+             portA = binary_pattern[unit];
+             portE = 0x02;
+             Delay_ms(1);
+
+             portA = binary_pattern[ten];
+             portE = 0x01;
+             Delay_ms(1);
+         }
+     }
+}
+
+void displayThreeDigit(char unit, char ten, char hundred, int pause) {
+     for (x = 0; x < pause; x++){
+         for (y = 0; y < pause; y++) {
+             portA = binary_pattern[unit];
+             portE = 0x04;
+             Delay_ms(1);
+
+             portA = binary_pattern[ten];
+             portE = 0x02;
+             Delay_ms(1);
+
+             portA = binary_pattern[hundred];
+             portE = 0x01;
+             Delay_ms(1);
+         }
+     }
+}
+
+void displayFourDigit(char unit, char ten, char hundred, char thousand, int pause) {
+     for (x = 0; x < pause; x++){
+         for (y = 0; y < pause; y++) {
+             portA = binary_pattern[unit];
+             portE = 0x08;
+             Delay_ms(1);
+
+             portA = binary_pattern[ten];
+             portE = 0x04;
+             Delay_ms(1);
+
+             portA = binary_pattern[hundred];
+             portE = 0x02;
+             Delay_ms(1);
+
+             portA = binary_pattern[thousand];
+             portE = 0x01;
+             Delay_ms(1);
+         }
+     }
+}
+
+void breakIntoDigits(int number) {
+      indexCount = 0;
+      digit = 0;
+      while(number) {
+           digit = number % 10;
+           digitsArr[indexCount] = digit;
+           indexCount = indexCount + 1;
+           number = number / 10;
+      }
+}
+
+void main() {
+
+ AD1PCFG = 0xFFFF;      // Configure AN pins as digital I/O
+ JTAGEN_bit = 0;        // Disable JTAG
+
+ TRISA = 0x00;  //portA is output to D
+ TRISE = 0X00;  //portE is output to AN
+
+ while(1)
+ {
+     cube = value * value * value;
+     breakIntoDigits(cube);
+     if (cube / 10 == 0) {  // is a one digit number
+        displayOneDigit(digitsArr[0], 40);
+     } else if (cube / 100 == 0){ // is a two digit number
+       displayTwoDigit(digitsArr[0], digitsArr[1], 40);
+     } else if (cube / 1000 == 0) { // is three digit number
+       displayThreeDigit(digitsArr[0], digitsArr[1], digitsArr[2], 40);
+     } else {
+       displayFourDigit(digitsArr[0], digitsArr[1], digitsArr[2], digitsArr[3], 40);
+     }
+
+     value = value + 1;
+     if (value > 21)
+        value = 1;
+ }
+
+}//main

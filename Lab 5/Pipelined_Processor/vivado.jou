@@ -1,0 +1,20 @@
+#-----------------------------------------------------------
+# Vivado v2017.4 (64-bit)
+# SW Build 2086221 on Fri Dec 15 20:55:39 MST 2017
+# IP Build 2085800 on Fri Dec 15 22:25:07 MST 2017
+# Start of session at: Tue May  9 13:30:03 2023
+# Process ID: 4504
+# Current directory: C:/Users/gahme/Desktop/Pipelined_Processor
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent15772 C:\Users\gahme\Desktop\Pipelined_Processor\Pipelined_Processor.xpr
+# Log file: C:/Users/gahme/Desktop/Pipelined_Processor/vivado.log
+# Journal file: C:/Users/gahme/Desktop/Pipelined_Processor\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/gahme/Desktop/Pipelined_Processor/Pipelined_Processor.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source tb_pipelined_processor.tcl
+close_sim
+launch_simulation
+source tb_pipelined_processor.tcl
+close_sim

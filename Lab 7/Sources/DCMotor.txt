@@ -1,0 +1,72 @@
+/**
+  This is a DC Motor Implementation for Lab 7 Part 2b
+*/
+
+
+void init() {
+     LATA = 0x0000; // initially motor is off as this sets RA1 and RA2 to zero
+                    // so Control1 = Control2 = 0
+     LATE = 0x0000; // initialize inputs from the buttons to zero as this sets
+                    // RE0 = RE1 = RB0 = RB1 = 0
+}
+
+void turnClockWise() {
+          PORTA = 0x0000;
+          Delay_ms(100);
+          PORTA = 0x0003;
+          Delay_ms(1000);
+}
+
+void turnCounterClockWise() {
+         PORTA = 0x0000;
+         Delay_ms(100);
+         PORTA = 0x0002;
+         Delay_ms(1000);
+
+}
+
+void stop() {
+     PORTA = 0x0000;
+}
+
+void main() {
+     // Set All Pins on PortB to Digital I/O
+     AD1PCFG = 0xFFFF; // setting all pins to 1 sets them to Digital I/O
+     DDPCON.JTAGEN = 0; // disable JTAG
+
+     // using PortA_1 for DC Motor
+     // DC Motor has two controls for the J4 connector namely
+     // Control1 and Control2 for selecting the direction of the motor
+     // Connecting J4 --> PortA_1 on Beti Board sets the following pins
+     // RA1 --> Control1
+     // RA2 --> Control2
+
+     // Initialize PortA as an output port
+     TRISA = 0x0000;
+
+     // Using PortE_1 for Push Buttons
+     // Push Buttons map RBX --> X button for X=0,1,2,3,4,5,6,7
+     // Connecting to J1 connector to PortE_1 on Beti Board gives the following pin mapping
+     // RBX --> RAX for X=0,1,2,3,4,5,6,7
+     // For DC Motor, Need to Use only Button 0 and Button 1
+     // This gives us
+     // RE0 --> RB0
+     // RE1 --> RB1
+
+     // Initialize PortE as input port
+     TRISE = 0xFFFF;
+
+     init();
+     while(1) {
+//          if (PORTE & 0x0001)
+//               turnClockWise();
+//          else if (PORTE & 0x0002)
+//              turnCounterClockWise();
+//          else
+//               stop();
+            if (portE != 0x0003)
+               portA = portE << 1;
+            else
+                portA = 0x0000;
+     }
+}
